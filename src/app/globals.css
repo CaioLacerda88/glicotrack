@@ -10,6 +10,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Cores do sistema de glicemia */
+  --color-glucose-normal: #16a34a;      /* verde - 70 a 180 mg/dL */
+  --color-glucose-warning: #ea580c;     /* laranja - 180 a 250 mg/dL */
+  --color-glucose-critical: #dc2626;    /* vermelho - <70 ou >250 mg/dL */
 }
 
 @media (prefers-color-scheme: dark) {
