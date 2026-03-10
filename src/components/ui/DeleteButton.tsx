@@ -22,7 +22,7 @@ export function DeleteButton({ onDelete, confirmMessage = 'Remover este registro
       onClick={handleDelete}
       disabled={isPending}
       aria-label={label ?? 'Remover'}
-      className="shrink-0 rounded-lg p-2.5 text-gray-600 hover:bg-white/70 hover:text-red-600 transition-colors disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-1"
+      className="shrink-0 rounded-lg p-2.5 text-gray-600 hover:bg-white/70 hover:text-red-600 transition-colors disabled:opacity-40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-1 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-red-400"
     >
       {isPending ? (
         <svg aria-hidden="true" className="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none">

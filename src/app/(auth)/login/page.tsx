@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
+import { Logo } from '@/components/ui/Logo'
+import { ThemeToggle } from '@/components/theme/ThemeToggle'
 
 export default function LoginPage() {
   const router = useRouter()
@@ -33,15 +35,22 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 dark:bg-gray-950">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
+
       <div className="w-full max-w-sm">
-        <div className="mb-8 text-center">
-          <h1 className="text-2xl font-bold text-gray-900">GlicoTrack</h1>
-          <p className="mt-1 text-sm text-gray-500">Monitoramento de glicemia</p>
+        <div className="mb-8 flex flex-col items-center gap-3">
+          <Logo size="lg" />
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">GlicoTrack</h1>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">Monitoramento de glicemia</p>
+          </div>
         </div>
 
-        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-          <h2 className="mb-5 text-lg font-semibold text-gray-900">Entrar na conta</h2>
+        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900">
+          <h2 className="mb-5 text-lg font-semibold text-gray-900 dark:text-gray-100">Entrar na conta</h2>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <Input
@@ -64,7 +73,7 @@ export default function LoginPage() {
             />
 
             {error && (
-              <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>
+              <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600 dark:bg-red-900/30 dark:text-red-400">{error}</p>
             )}
 
             <Button type="submit" loading={loading} className="w-full mt-1">
@@ -73,9 +82,9 @@ export default function LoginPage() {
           </form>
         </div>
 
-        <p className="mt-4 text-center text-sm text-gray-500">
+        <p className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
           Não tem conta?{' '}
-          <Link href="/register" className="font-medium text-blue-600 hover:underline">
+          <Link href="/register" className="font-medium text-blue-600 hover:underline dark:text-blue-400">
             Criar conta
           </Link>
         </p>

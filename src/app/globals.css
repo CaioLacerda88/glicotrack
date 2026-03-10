@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
+/* Habilita dark mode por classe (.dark) no Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
 }
 
 @theme inline {
@@ -15,13 +23,6 @@
   --color-glucose-normal: #16a34a;      /* verde - 70 a 180 mg/dL */
   --color-glucose-warning: #ea580c;     /* laranja - 180 a 250 mg/dL */
   --color-glucose-critical: #dc2626;    /* vermelho - <70 ou >250 mg/dL */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
