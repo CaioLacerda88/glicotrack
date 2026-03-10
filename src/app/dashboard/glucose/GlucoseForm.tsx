@@ -56,6 +56,7 @@ export function GlucoseForm() {
           max={600}
           placeholder="Ex: 120"
           required
+          autoFocus
         />
 
         <div className="flex flex-col gap-1">
@@ -103,7 +104,7 @@ export function GlucoseForm() {
         <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700">Medição registrada com sucesso!</p>
       )}
 
-      <Button type="submit" loading={isPending} className="self-start">
+      <Button type="submit" loading={isPending} className="w-full sm:w-auto">
         Salvar medição
       </Button>
     </form>

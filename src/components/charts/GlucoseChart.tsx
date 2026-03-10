@@ -74,7 +74,7 @@ export function GlucoseChart({ readings }: GlucoseChartProps) {
   }
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3" role="img" aria-label={`Gráfico de tendência de glicemia — ${data.length} medições nos últimos ${days} dias`}>
       <div className="flex items-center justify-between">
         <p className="text-sm text-gray-500">{data.length} medições</p>
         <div className="flex gap-1">
@@ -82,7 +82,7 @@ export function GlucoseChart({ readings }: GlucoseChartProps) {
             <button
               key={p.days}
               onClick={() => setDays(p.days)}
-              className={`rounded-lg px-3 py-1 text-xs font-medium transition-colors ${
+              className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                 days === p.days
                   ? 'bg-blue-600 text-white'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -97,15 +97,15 @@ export function GlucoseChart({ readings }: GlucoseChartProps) {
       <ResponsiveContainer width="100%" height={220}>
         <LineChart data={data} margin={{ top: 8, right: 8, left: -16, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-          <XAxis dataKey="date" tick={{ fontSize: 10 }} tickLine={false} interval="preserveStartEnd" />
-          <YAxis tick={{ fontSize: 11 }} tickLine={false} domain={['auto', 'auto']} />
+          <XAxis dataKey="date" tick={{ fontSize: 12 }} tickLine={false} interval="preserveStartEnd" />
+          <YAxis tick={{ fontSize: 12 }} tickLine={false} domain={['auto', 'auto']} />
           <Tooltip
             contentStyle={{ fontSize: 12, borderRadius: 8 }}
             formatter={(value) => [`${value} mg/dL`, 'Glicemia']}
           />
           {/* Faixas de referência */}
-          <ReferenceLine y={70} stroke="#dc2626" strokeDasharray="4 3" label={{ value: '70', fontSize: 10, fill: '#dc2626' }} />
-          <ReferenceLine y={180} stroke="#ea580c" strokeDasharray="4 3" label={{ value: '180', fontSize: 10, fill: '#ea580c' }} />
+          <ReferenceLine y={70} stroke="#dc2626" strokeDasharray="4 3" label={{ value: '70', fontSize: 12, fill: '#dc2626' }} />
+          <ReferenceLine y={180} stroke="#ea580c" strokeDasharray="4 3" label={{ value: '180', fontSize: 12, fill: '#ea580c' }} />
           <Line
             type="monotone"
             dataKey="value"

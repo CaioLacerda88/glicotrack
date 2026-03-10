@@ -102,7 +102,7 @@ export function InsulinForm() {
         <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700">Dose registrada com sucesso!</p>
       )}
 
-      <Button type="submit" loading={isPending} className="self-start">
+      <Button type="submit" loading={isPending} className="w-full sm:w-auto">
         Salvar dose
       </Button>
     </form>

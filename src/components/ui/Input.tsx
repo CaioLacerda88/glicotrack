@@ -18,7 +18,7 @@ export function Input({ label, error, className = '', id, ...props }: InputProps
       <input
         id={inputId}
         className={`
-          w-full rounded-lg border px-3 py-2 text-sm text-gray-900
+          w-full rounded-lg border px-3 py-2.5 text-base text-gray-900
           placeholder:text-gray-500 outline-none
           focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30
           focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-1
@@ -29,7 +29,7 @@ export function Input({ label, error, className = '', id, ...props }: InputProps
         {...props}
       />
       {error && (
-        <p className="text-xs text-red-600">{error}</p>
+        <p className="text-sm text-red-600">{error}</p>
       )}
     </div>
   )

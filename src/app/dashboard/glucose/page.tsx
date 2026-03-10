@@ -41,8 +41,8 @@ export default async function GlucosePage() {
         <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-50 px-3 py-1 text-orange-700">
           <span className="h-2 w-2 rounded-full bg-orange-500" /> Atenção 180–250
         </span>
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-3 py-1 text-red-700">
-          <span className="h-2 w-2 rounded-full bg-red-600" /> Hiperglicemia &gt; 250
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-red-100 px-3 py-1 text-red-800">
+          <span className="h-2 w-2 rounded-full bg-red-700" /> Hiperglicemia &gt; 250
         </span>
       </div>
 
@@ -70,7 +70,11 @@ export default async function GlucosePage() {
         </h2>
 
         {!readings || readings.length === 0 ? (
-          <p className="text-sm text-gray-500">Nenhuma medição registrada ainda.</p>
+          <div className="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-6 text-center">
+            <p className="text-2xl mb-2">🩸</p>
+            <p className="text-sm font-medium text-gray-700">Nenhuma medição registrada ainda</p>
+            <p className="mt-1 text-sm text-gray-500">Use o formulário acima para registrar sua primeira medição.</p>
+          </div>
         ) : (
           <ul className="flex flex-col gap-2">
             {readings.map((reading) => {

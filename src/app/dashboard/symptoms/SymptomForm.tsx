@@ -77,7 +77,7 @@ export function SymptomForm() {
       {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>}
       {success && <p className="rounded-lg bg-green-50 px-3 py-2 text-sm text-green-700">Sintomas registrados!</p>}
 
-      <Button type="submit" loading={isPending} className="self-start">Salvar sintomas</Button>
+      <Button type="submit" loading={isPending} className="w-full sm:w-auto">Salvar sintomas</Button>
     </form>
   )
 }
